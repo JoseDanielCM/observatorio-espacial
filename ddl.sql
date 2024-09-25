@@ -22,18 +22,18 @@ CREATE TABLE IF NOT EXISTS `planets` (
 
 CREATE TABLE IF NOT EXISTS `telescopes` (
   `id` int NOT NULL,
-  `location` varchar(50) CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
+  `location` varchar(256),
   `resolution` int NOT NULL,
   PRIMARY KEY (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL,
-  `name` varchar(50) CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
-  `email` varchar(50) CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
-  `phone` varchar(50) CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
   `birthDate` date NOT NULL,
-  `address` varchar(50) CHARACTER SET utf32 COLLATE utf32_spanish_ci DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `phone` (`phone`)
