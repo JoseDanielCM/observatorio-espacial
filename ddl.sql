@@ -1,5 +1,6 @@
+-- SQLBook: Code
 CREATE TABLE IF NOT EXISTS `celestialBodies` (
-  `id` int NOT NULL,
+  `id` int NOT NULL auto_increment,
   `name` varchar(50) DEFAULT NULL UNIQUE,
   `distance` double DEFAULT NULL,
   `distanceUnits` enum('lightYears','millionLightYears') DEFAULT 'lightYears',
@@ -101,3 +102,4 @@ CREATE TABLE IF NOT EXISTS observation (
   FOREIGN KEY (`idBody`) REFERENCES `celestialBodies` (`id`),
   PRIMARY KEY ('id')
 );
+
