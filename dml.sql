@@ -1,20 +1,65 @@
--- SQLBook: Code
-INSERT INTO celestialBodies (
-    name,distance,distanceUnits,diameter,diameterUnits,bodyType
-) VALUES 
-("Ton 618",1 * POWER(10, 10),"lightYears",5 * POWER(10, 9),"kilometers","blackHole"),
-("Sun",0,"lightYears",1390000,"kilometers","star"),
-("Proxima Centauri",4.24,"lightYears",200000,"kilometers","star"),
-("Sagittarius A",26000,"lightYears",44000000,"kilometers","blackHole"),
-("Alpha Centauri A",4.37,"lightYears",1220000,"kilometers","star"),
+INSERT INTO celestialBodies (name, distance, distanceUnits, diameter, diameterUnits, bodyType) VALUES 
+('Milky Way', 0.0, 'lightYears', 105700, 'lightYears', 'galaxy'),
+('Andromeda', 2.537, 'millionLightYears', 220000, 'lightYears', 'galaxy'),
+('Triangulum', 3.0, 'millionLightYears', 60000, 'lightYears', 'galaxy'),
+('Whirlpool Galaxy', 23.16, 'millionLightYears', 76000, 'lightYears', 'galaxy'),
+('Sombrero Galaxy', 31.1, 'millionLightYears', 49000, 'lightYears', 'galaxy'),
+('Messier 87', 53.5, 'millionLightYears', 120000, 'lightYears', 'galaxy'),
+('Pinwheel Galaxy', 20.9, 'millionLightYears', 170000, 'lightYears', 'galaxy'),
+('Cartwheel Galaxy', 500, 'millionLightYears', 150000, 'lightYears', 'galaxy'),
+('Centaurus A', 12.0, 'millionLightYears', 60000, 'lightYears', 'galaxy'),
+('NGC 1300', 61.3, 'millionLightYears', 110000, 'lightYears', 'galaxy'),
+('NGC 4993', 144.0, 'millionLightYears', 52000, 'lightYears', 'galaxy'),
+('IC 1101', 1040.0, 'millionLightYears', 6000000, 'lightYears', 'galaxy'),
+('Large Magellanic Cloud', 0.163, 'millionLightYears', 14000, 'lightYears', 'galaxy'),
+('Small Magellanic Cloud', 0.197, 'millionLightYears', 7000, 'lightYears', 'galaxy'),
+('Messier 81', 11.74, 'millionLightYears', 90000, 'lightYears', 'galaxy'),
+('NGC 253', 11.42, 'millionLightYears', 70000, 'lightYears', 'galaxy'),
+('NGC 891', 30.0, 'millionLightYears', 100000, 'lightYears', 'galaxy'),
+('NGC 6744', 30.0, 'millionLightYears', 175000, 'lightYears', 'galaxy'),
+('NGC 3370', 98.4, 'millionLightYears', 100000, 'lightYears', 'galaxy'),
+('ESO 137-001', 220.0, 'millionLightYears', 80000, 'lightYears', 'galaxy');
 
-INSERT INTO blackHole (
-    id,mass,spin,charge,galaxy
-) VALUES (1, 1.32 * POWER(10, 40))
+INSERT INTO galaxies (id, galaxyType, galaxyGroup) VALUES 
+(1, 'spiral', 'Local Group'),
+(2, 'spiral', 'Local Group'),
+(3, 'spiral', 'Local Group'),
+(4, 'spiral', 'Canes Venatici Group'),
+(5, 'spiral', 'Virgo Cluster'),
+(6, 'elliptical', 'Virgo Cluster'),
+(7, 'spiral', 'Pinwheel Group'),
+(8, 'lenticular', 'No Group'),
+(9, 'elliptical', 'Centaurus Group'),
+(10, 'spiral', 'Eridanus Cluster'),
+(11, 'elliptical', 'Hydra Cluster'),
+(12, 'elliptical', 'Abell 2029'),
+(13, 'irregular', 'Local Group'),
+(14, 'irregular', 'Local Group'),
+(15, 'spiral', 'M81 Group'),
+(16, 'spiral', 'Sculptor Group'),
+(17, 'spiral', 'Pisces-Perseus Supercluster'),
+(18, 'spiral', 'Pavo-Indus Supercluster'),
+(19, 'spiral', 'Leo Cluster'),
+(20, 'spiral', 'Norma Cluster');
 
-INSERT INTO stars (
-    id,mass,planets,starType
-) VALUES 
-(2,1,8,"g-type"),
-(3,0.12,2,"m-type"),
-(5,1.1,1,"g-type")
+INSERT INTO celestialBodies (name, distance, distanceUnits, diameter, diameterUnits, bodyType) VALUES 
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sirius A', 8.6, 'lightYears',2380700,'kilometers','star'),
+('Proxima Centauri', 4.24, 'lightYears',214550,'kilometers','star'),
+('Betelgeuse', 642.5, 'lightYears',0.047,'lightDays','star'),
+('Alpha Centauri A', 4.37, 'lightYears',1702000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
+('Sun', 0.0, 'lightYears',1390000,'kilometers','star'),
