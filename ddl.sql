@@ -39,6 +39,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `phone` (`phone`)
 );
 
+CREATE TABLE IF NOT EXISTS `galaxies` (
+  `id` INT PRIMARY KEY,
+  `galaxyType` enum("spiral", "elliptical", "lenticular", "quasars"),
+  `galaxyGroup` varchar(50),
+  FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`)
+);
+
 CREATE TABLE IF NOT EXISTS `stars` (
   `id` int NOT NULL,
   `mass` double DEFAULT NULL,
@@ -46,14 +53,13 @@ CREATE TABLE IF NOT EXISTS `stars` (
   `galaxy` int DEFAULT 1,
   `starType` enum('o-type', 'b-type', 'a-type', 'f-type', 'g-type', 'k-type', 'm-type', 'whiteDwarf'),
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `galaxies` (`id`)
+  FOREIGN KEY (`galaxy`) REFERENCES `galaxies` (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `blackHoles` (
   `id` int NOT NULL,
   `mass` double DEFAULT NULL,
   `spin` double DEFAULT NULL,
-  `charge` double DEFAULT NULL,
   `galaxy` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`),
@@ -61,20 +67,16 @@ CREATE TABLE IF NOT EXISTS `blackHoles` (
 );
 
 CREATE TABLE IF NOT EXISTS `asteroids` (
-  `idAsteroid` INT PRIMARY KEY AUTO_INCREMENT,
-  `type_asteroid` enum("chondrite", "stony", "nickel-iron"),
+  `id` INT PRIMARY KEY,
+  `asteroidType` enum("carbonaceous", "stony", "nickelIron"),
   `mass` int,
   `surface` varchar(50),
   `orbitId` int NOT NULL,
+  FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`),
   FOREIGN KEY (`orbitId`) REFERENCES `celestialBodies` (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `galaxies` (
-  `id` INT PRIMARY KEY AUTO_INCREMENT,
-  `galaxyType` enum("spiral", "elliptical", "lenticular", "quasars"),
-  `galaxyGroup` varchar(50),
-  FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`)
-);
+
 
 CREATE TABLE IF NOT EXISTS `typeAstronomicalEvents` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
