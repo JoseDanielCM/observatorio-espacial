@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `celestialBodies` (
   `id` int NOT NULL,
   `name` varchar(50) DEFAULT NULL UNIQUE,
   `distance` double DEFAULT NULL,
-  `distanceUnits` enum('lightYears', 'millionLightYears') DEFAULT 'lightYears',
+  `distanceUnits` enum("kilometers",'lightYears', 'millionLightYears') DEFAULT 'lightYears',
   `diameter` double DEFAULT NULL,
   `diameterUnits` enum('kilometers', 'lightDays', 'lightYears') DEFAULT 'kilometers',
   `bodyType` enum('planet', 'star', 'galaxy', 'asteroid', 'blackHole'),
@@ -75,8 +75,6 @@ CREATE TABLE IF NOT EXISTS `asteroids` (
   FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`),
   FOREIGN KEY (`orbitId`) REFERENCES `celestialBodies` (`id`)
 );
-
-
 
 CREATE TABLE IF NOT EXISTS `typeAstronomicalEvents` (
   `id` INT PRIMARY KEY,

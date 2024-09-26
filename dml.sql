@@ -7,21 +7,21 @@ VALUES
 (3,'Triangulum', 3.0, 'millionLightYears', 60000, 'lightYears', 'galaxy'),
 (4,'Whirlpool Galaxy', 23.16, 'millionLightYears', 76000, 'lightYears', 'galaxy'),
 (5,'Sombrero Galaxy', 31.6, 'millionLightYears', 49000, 'lightYears', 'galaxy'),
-(7,'Messier 87', 53.5, 'millionLightYears', 120000, 'lightYears', 'galaxy'),
-(8,'Pinwheel Galaxy', 20.9, 'millionLightYears', 170000, 'lightYears', 'galaxy'),
-(9,'Cartwheel Galaxy', 500, 'millionLightYears', 150000, 'lightYears', 'galaxy'),
-(10,'Centaurus A', 12.0, 'millionLightYears', 60000, 'lightYears', 'galaxy'),
-(11,'NGC 1300', 61.3, 'millionLightYears', 110000, 'lightYears', 'galaxy'),
-(12,'NGC 4993', 144.0, 'millionLightYears', 52000, 'lightYears', 'galaxy'),
-(13,'IC 1101', 1040.0, 'millionLightYears', 6000000, 'lightYears', 'galaxy'),
-(14,'Large Magellanic Cloud', 0.163, 'millionLightYears', 14000, 'lightYears', 'galaxy'),
-(15,'Small Magellanic Cloud', 0.197, 'millionLightYears', 7000, 'lightYears', 'galaxy'),
-(16,'Messier 81', 11.74, 'millionLightYears', 90000, 'lightYears', 'galaxy'),
-(17,'NGC 253', 11.42, 'millionLightYears', 70000, 'lightYears', 'galaxy'),
-(18,'NGC 891', 30.0, 'millionLightYears', 100000, 'lightYears', 'galaxy'),
-(19,'NGC 6744', 30.0, 'millionLightYears', 175000, 'lightYears', 'galaxy'),
-(20,'NGC 3370', 98.4, 'millionLightYears', 100000, 'lightYears', 'galaxy'),
-(21,'ESO 137-001', 220.0, 'millionLightYears', 80000, 'lightYears', 'galaxy'),
+(6,'Messier 87', 53.5, 'millionLightYears', 120000, 'lightYears', 'galaxy'),
+(7,'Pinwheel Galaxy', 20.9, 'millionLightYears', 170000, 'lightYears', 'galaxy'),
+(8,'Cartwheel Galaxy', 500, 'millionLightYears', 150000, 'lightYears', 'galaxy'),
+(9,'Centaurus A', 12.0, 'millionLightYears', 60000, 'lightYears', 'galaxy'),
+(10,'NGC 1300', 61.3, 'millionLightYears', 110000, 'lightYears', 'galaxy'),
+(11,'NGC 4993', 144.0, 'millionLightYears', 52000, 'lightYears', 'galaxy'),
+(12,'IC 1101 galaxy', 1040.0, 'millionLightYears', 6000000, 'lightYears', 'galaxy'),
+(13,'Large Magellanic Cloud', 0.163, 'millionLightYears', 14000, 'lightYears', 'galaxy'),
+(14,'Small Magellanic Cloud', 0.197, 'millionLightYears', 7000, 'lightYears', 'galaxy'),
+(15,'Messier 81', 11.74, 'millionLightYears', 90000, 'lightYears', 'galaxy'),
+(16,'NGC 253', 11.42, 'millionLightYears', 70000, 'lightYears', 'galaxy'),
+(17,'NGC 891', 30.0, 'millionLightYears', 100000, 'lightYears', 'galaxy'),
+(18,'NGC 6744', 30.0, 'millionLightYears', 175000, 'lightYears', 'galaxy'),
+(19,'NGC 3370', 98.4, 'millionLightYears', 100000, 'lightYears', 'galaxy'),
+(20,'ESO 137-001', 220.0, 'millionLightYears', 80000, 'lightYears', 'galaxy'),
 
 -- BLACK HOLES 21-40
 (21,"Ton 618", 1 * POWER(10, 10), "lightYears", 5 * POWER(10, 9), "kilometers", "blackHole"),
@@ -70,7 +70,7 @@ VALUES
 -- PLANETS 61-80
 (61,"Mercury", 0, "lightYears", 4879, "kilometers", "planet"),
 (62,"Venus", 0, "lightYears", 12104, "kilometers", "planet"),
-(63,"Earth"0, "lightYears", 12742, "kilometers", "planet"),
+(63,"Earth", 0, "lightYears", 12742, "kilometers", "planet"),
 (64,"Mars", 0, "lightYears", 6779, "kilometers", "planet"),
 (65,"Jupiter", 0, "lightYears", 139820, "kilometers", "planet"),
 (66,"Saturn", 0, "lightYears", 116460, "kilometers", "planet"),
@@ -124,8 +124,8 @@ INSERT INTO galaxies (id, galaxyType, galaxyGroup) VALUES
 (10, 'spiral', 'Eridanus Cluster'),
 (11, 'elliptical', 'Hydra Cluster'),
 (12, 'elliptical', 'Abell 2029'),
-(13, 'irregular', 'Local Group'),
-(14, 'irregular', 'Local Group'),
+(13, 'spiral', 'Local Group'),
+(14, 'spiral', 'Local Group'),
 (15, 'spiral', 'M81 Group'),
 (16, 'spiral', 'Sculptor Group'),
 (17, 'spiral', 'Pisces-Perseus Supercluster'),
@@ -186,27 +186,26 @@ INSERT INTO stars (id, mass, planetsAmount, starType) VALUES
 -- planet's mass earth
 INSERT INTO planets (id,mass,moonsAmount,orbitId,planetType)
 VALUES
-(61, 0.05 , 0 , 41, "terrestrial")
-(62, 0.8 , 0 , 41, "terrestrial")
-(63, 1 , 0 , 41, "terrestrial")
-(64, 0.1 , 1 , 41, "terrestrial")
-(65, 317.8 , 2 , 41, "terrestrial")
-(66, 95.2 , 95 , 41, "terrestrial")
-(67, 14.5 , 146 , 41, "terrestrial")
-(68, 17.1 , 27 , 41, "terrestrial")
-(69, 0.0022 , 14 , 41, "terrestrial")
-(70, 0.00067 , 5 , 41, "terrestrial")
-(71, 0.00052 , 2 , 41, "terrestrial")
-(72, 0.0028 , 1 , 41, "terrestrial")
-(73, 30 , 1 , 60, "terrestrial")
-(74, 1.17 , 0 , 42, "terrestrial")
-(75, 5 , 0 , 58, "terrestrial")
-(76, 3.1 , 0 , 57, "terrestrial")
-(77, 0.69 , 0 , 56, "terrestrial")
-(78, 8 , 0 , 55, "terrestrial")
-(79, 1.47 , 0 , 54, "terrestrial")
-(80, 0.38 , 0 , 53, "terrestrial")
-;
+(61, 0.05 , 0 , 41, "terrestrial"),
+(62, 0.8 , 0 , 41, "terrestrial"),
+(63, 1 , 0 , 41, "terrestrial"),
+(64, 0.1 , 1 , 41, "terrestrial"),
+(65, 317.8 , 2 , 41, "terrestrial"),
+(66, 95.2 , 95 , 41, "terrestrial"),
+(67, 14.5 , 146 , 41, "terrestrial"),
+(68, 17.1 , 27 , 41, "terrestrial"),
+(69, 0.0022 , 14 , 41, "terrestrial"),
+(70, 0.00067 , 5 , 41, "terrestrial"),
+(71, 0.00052 , 2 , 41, "terrestrial"),
+(72, 0.0028 , 1 , 41, "terrestrial"),
+(73, 30 , 1 , 60, "terrestrial"),
+(74, 1.17 , 0 , 42, "terrestrial"),
+(75, 5 , 0 , 58, "terrestrial"),
+(76, 3.1 , 0 , 57, "terrestrial"),
+(77, 0.69 , 0 , 56, "terrestrial"),
+(78, 8 , 0 , 55, "terrestrial"),
+(79, 1.47 , 0 , 54, "terrestrial"),
+(80, 0.38 , 0 , 53, "terrestrial");
 
 INSERT INTO asteroids (id, asteroidType, mass, surface, orbitId) VALUES
 (81, 'carbonaceous', 939000000, 'Rocky, with water ice and some hydrated minerals', 41),
