@@ -176,26 +176,27 @@ INSERT INTO stars (id, mass, planetsAmount, starType) VALUES
 (60, 1.0, 1, 'g-type');
 
 -- planet's mass earth
-INSERT INTO planets (id,mass,moonsAmount,orbitId,planetType) VALUES
+INSERT INTO planets (id,mass,moonsAmount,orbitId,planetType)
+VALUES
 (61, 0.05 , 0 , 41, "terrestrial"),
 (62, 0.8 , 0 , 41, "terrestrial"),
-(63, 1 , 0 , 41, "terrestrial"),
+(63, 1 , 1 , 41, "terrestrial"),
 (64, 0.1 , 1 , 41, "terrestrial"),
-(65, 317.8 , 2 , 41, "terrestrial"),
-(66, 95.2 , 95 , 41, "terrestrial"),
-(67, 14.5 , 146 , 41, "terrestrial"),
-(68, 17.1 , 27 , 41, "terrestrial"),
-(69, 0.0022 , 14 , 41, "terrestrial"),
-(70, 0.00067 , 5 , 41, "terrestrial"),
-(71, 0.00052 , 2 , 41, "terrestrial"),
-(72, 0.0028 , 1 , 41, "terrestrial"),
-(73, 30 , 1 , 60, "terrestrial"),
-(74, 1.17 , 0 , 42, "terrestrial"),
+(65, 317.8 , 2 , 41, "gasGiant"),
+(66, 95.2 , 95 , 41, "gasGiant"),
+(67, 14.5 , 146 , 41, "iceGiant"),
+(68, 17.1 , 27 , 41, "iceGiant"),
+(69, 0.0022 , 14 , 41, "dwarf"),
+(70, 0.00067 , 5 , 41, "dwarf"),
+(71, 0.00052 , 2 , 41, "dwarf"),
+(72, 0.0028 , 1 , 41, "dwarf"),
+(73, 30 , 1 , 60, "iceGiant"),
+(74, 1.17 , 0 , 42, "terrestrialGiant"),
 (75, 5 , 0 , 58, "terrestrial"),
-(76, 3.1 , 0 , 57, "terrestrial"),
-(77, 0.69 , 0 , 56, "terrestrial"),
-(78, 8 , 0 , 55, "terrestrial"),
-(79, 1.47 , 0 , 54, "terrestrial"),
+(76, 3.1 , 0 , 57, "terrestrialGiant"),
+(77, 0.69 , 0 , 56, "gasGiant"),
+(78, 8 , 0 , 55, "terrestrialGiant"),
+(79, 1.47 , 0 , 54, "gasGiant"),
 (80, 0.38 , 0 , 53, "terrestrial");
 
 INSERT INTO asteroids (id, asteroidType, mass, surface, orbitId) VALUES

@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `stars` (
   `galaxy` int DEFAULT 1,
   `starType` enum('o-type', 'b-type', 'a-type', 'f-type', 'g-type', 'k-type', 'm-type', 'whiteDwarf'),
   PRIMARY KEY (`id`),
+  FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`),
   FOREIGN KEY (`galaxy`) REFERENCES `galaxies` (`id`)
 );
 
