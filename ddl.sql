@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `blackHoles` (
 CREATE TABLE IF NOT EXISTS `asteroids` (
   `id` INT PRIMARY KEY,
   `asteroidType` enum("carbonaceous", "stony", "nickelIron"),
-  `mass` int,
+  `mass` double,
   `surface` varchar(50),
   `orbitId` int NOT NULL,
   FOREIGN KEY (`id`) REFERENCES `celestialBodies` (`id`),
