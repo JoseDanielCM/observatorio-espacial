@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `celestialBodies` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `name` varchar(50) DEFAULT NULL UNIQUE,
   `distance` double DEFAULT NULL,
   `distanceUnits` enum('lightYears', 'millionLightYears') DEFAULT 'lightYears',
@@ -79,19 +79,19 @@ CREATE TABLE IF NOT EXISTS `asteroids` (
 
 
 CREATE TABLE IF NOT EXISTS `typeAstronomicalEvents` (
-  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `id` INT PRIMARY KEY,
   `eventName` varchar(50)
 );
 
 CREATE TABLE IF NOT EXISTS `astronomicalEvents` (
-  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `id` INT PRIMARY KEY,
   `eventId` int NOT NULL,
   `eventDate` date NOT NULL,
   FOREIGN KEY (`eventId`) REFERENCES `typeAstronomicalEvents` (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `observation` (
-  `id` INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `observations` (
+  `id` INT PRIMARY KEY,
   `idUser` INT,
   `idTelescope` INT,
   `idBody` INT,
