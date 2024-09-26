@@ -1,6 +1,4 @@
-INSERT INTO celestialBodies 
-(id,name, distance, distanceUnits, diameter, diameterUnits, bodyType) 
-VALUES 
+INSERT INTO celestialBodies (id,name, distance, distanceUnits, diameter, diameterUnits, bodyType) VALUES 
 -- GALAXIES 1-20
 (1,'Milky Way', 0.0, 'lightYears', 105700, 'lightYears', 'galaxy'),
 (2,'Andromeda', 2.537, 'millionLightYears', 220000, 'lightYears', 'galaxy'),
@@ -133,10 +131,7 @@ INSERT INTO galaxies (id, galaxyType, galaxyGroup) VALUES
 (19, 'spiral', 'Leo Cluster'),
 (20, 'spiral', 'Norma Cluster');
 
-INSERT INTO blackHoles (
-    id,mass,spin,galaxy
-) 
-VALUES
+INSERT INTO blackHoles (id,mass,spin,galaxy) VALUES
  (21, 1.32 * POWER(10, 40), 0.8,1),
  (22, 4 * POWER(10, 32), 0.5,1),
  (23, 2 * POWER(10, 30), 0.7,2),
@@ -156,8 +151,7 @@ VALUES
  (37, 8 * POWER(10, 32), 0.5,8),
  (38, 1 * POWER(10, 33), 0.2,1),
  (39, 9 * POWER(10, 33), 0.4,15),
- (40, 1 * POWER(10, 31), 0.4,1)
- ;
+ (40, 1 * POWER(10, 31), 0.4,1);
 
 INSERT INTO stars (id, mass, planetsAmount, starType) VALUES
 (41, 1.0, 8, 'g-type'),
@@ -181,11 +175,8 @@ INSERT INTO stars (id, mass, planetsAmount, starType) VALUES
 (59, 1.5, 0, 'g-type'),
 (60, 1.0, 1, 'g-type');
 
-
-
 -- planet's mass earth
-INSERT INTO planets (id,mass,moonsAmount,orbitId,planetType)
-VALUES
+INSERT INTO planets (id,mass,moonsAmount,orbitId,planetType) VALUES
 (61, 0.05 , 0 , 41, "terrestrial"),
 (62, 0.8 , 0 , 41, "terrestrial"),
 (63, 1 , 0 , 41, "terrestrial"),
@@ -230,9 +221,7 @@ INSERT INTO asteroids (id, asteroidType, mass, surface, orbitId) VALUES
 (100, 'carbonaceous', 0.000025, 'Dark and smooth', 41)
 ;
 
-INSERT INTO typeAstronomicalEvents
-(id,eventName)
-VALUES 
+INSERT INTO typeAstronomicalEvents (id,eventName) VALUES 
 (1,"Solar Eclipse"),
 (2,"Lunar Eclipse"),
 (3,"Meteor Shower"),
@@ -245,12 +234,9 @@ VALUES
 (10,"Quasars"),
 (11,"Pulsars"),
 (12,"Supermoon"),
-(13,"Micromoon")
-;
+(13,"Micromoon");
 
-INSERT INTO astronomicalEvents 
-(id,eventId,eventDate)
-VALUES 
+INSERT INTO astronomicalEvents (id,eventId,eventDate) VALUES 
 (1,1, "2024-4-8"),
 (2,1, "2026-8-12"),
 (3,2, "2024-3-25"),

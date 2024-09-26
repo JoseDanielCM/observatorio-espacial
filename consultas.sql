@@ -7,8 +7,35 @@ SELECT name,id FROM celestialBodies WHERE bodyType = 'asteroid' ORDER BY distanc
 -- 4. Nombre y distancia de las 3 galaxias mas pequeñas
 SELECT name,distance FROM celestialBodies WHERE bodyType = 'galaxy' ORDER BY diameter ASC LIMIT 3;
 -- 5. Toda la informacion de los agujeros negros en la Via Lactea (Milky Way)
-SELECT celestialBodies.name, celestialBodies.distance, celestialBodies.distanceUnits, celestialBodies.diameter, celestialBodies.diameterUnits, mass, spin FROM blackHoles INNER JOIN celestialBodies ON blackHoles.id = celestialBodies.id WHERE galaxy = 1
-
+SELECT celestialBodies.name, celestialBodies.distance, celestialBodies.distanceUnits, celestialBodies.diameter, celestialBodies.diameterUnits, mass, spin FROM blackHoles INNER JOIN celestialBodies ON blackHoles.id = celestialBodies.id WHERE galaxy = 1;
+-- 6. Todos los planetas que orbitan al Sol
+SELECT celestialBodies.name, celestialBodies.distance, celestialBodies.distanceUnits, celestialBodies.diameter, celestialBodies.diameterUnits, mass, moonsAmount FROM planets INNER JOIN celestialBodies ON planets.id = celestialBodies.id WHERE planets.orbitId = 41;
+-- 7. Todos los eclipses, tanto solares como lunares, que van a pasar en el futuro
+SELECT typeAstronomicalEvents.eventName, eventDate FROM astronomicalEvents INNER JOIN typeAstronomicalEvents ON astronomicalEvents.eventId = typeAstronomicalEvents.id WHERE eventId < 3;
+-- 8. Los 5 telescoipios mas potentes hasta la resolucion 12000
+SELECT location, resolution FROM telescopes WHERE resolution < 12000 ORDER BY resolution DESC LIMIT 5;
+-- 9. Las 6 observaciones en febrero de 2024 mas duraderas
+SELECT celestialBodies.name, telescopes.location, users.name, observationDate FROM observations INNER JOIN celestialBodies ON observations.idBody = celestialBodies.id INNER JOIN telescopes ON observations.idTelescope = telescopes.id INNER JOIN users ON users.id = observations.idUser WHERE observationDate >= '2024-02-01  00:00:00' AND observationDate < '2024-03-01 00:00:00' ORDER BY timeSpent DESC LIMIT 6;
+-- 10. Todos los planetas con 2 o mas lunas
+SELECT celestialBodies.name, moonsAmount FROM planets INNER JOIN celestialBodies ON planets.id = celestialBodies.id WHERE moonsAmount > 1;
+-- 11. Los 5 eventos astronomicos mas antiguos
+SELECT astronomicalEvents.id, typeAstronomicalEvents.eventName, astronomicalEvents.eventDate FROM astronomicalEvents INNER JOIN typeAstronomicalEvents ON astronomicalEvents.eventId = typeAstronomicalEvents.id ORDER BY astronomicalEvents.eventDate ASC LIMIT 5;
+-- 12. Todos los asteroides carbonaceos
+SELECT celestialBodies.name, asteroids.mass FROM asteroids INNER JOIN celestialBodies ON asteroids.id = celestialBodies.id WHERE asteroidType = 'carbonaceous';
+-- 13. Todos los usuarios que usaron el telescopio en Manua Kea, Hawaii
+SELECT users.name, celestialBodies.name FROM observations JOIN users ON observations.idUser = users.id JOIN celestialBodies ON observations.idBody = celestialBodies.id WHERE observations.idTelescope = 1;
+-- 14. Cuantos planetas tiene cada estrella, segun la base de datos
+SELECT celestialBodies.name, COUNT(planets.id) AS planetCount FROM planets JOIN celestialBodies ON planets.orbitId = celestialBodies.id JOIN stars ON stars.id = celestialBodies.id GROUP BY celestialBodies.name;
+-- 15. Todos los agujeros negros en la Via Lactea
+SELECT name, blackHoles.mass, blackHoles.spin
+FROM celestialBodies
+JOIN blackHoles ON celestialBodies.id = blackHoles.id
+WHERE blackHoles.galaxy = 1;
+-- 16.
+-- 17.
+-- 18.
+-- 19.
+-- 20.
 
 -- 21. 5 galaxias mas masivas
 SELECT cb.name, bh.mass FROM celestialBodies cb inner join blackHoles bh on cb id = bh.id order by bh.mass desc limit 5;
