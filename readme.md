@@ -8,6 +8,8 @@ El sistema de base de datos ayudará a gestionar eficientemente la información 
 
 ## Estructura de las Tablas y Relaciones
 
+<img src="imagen.png">
+
 ### Tablas
 
 1. **CelestialBodies**: Almacena información general sobre diferentes tipos de cuerpos celestes.
